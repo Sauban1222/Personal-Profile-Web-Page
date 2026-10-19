@@ -1,0 +1,55 @@
+/* Responsive styling for the personal profile page */
+:root {
+  --page: #f3f5fb;
+  --card: #ffffff;
+  --ink: #20263a;
+  --muted: #667085;
+  --accent: #5b5bd6;
+  --accent-light: #eeeeff;
+  --border: #e7e9f2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top left, #e4e8ff, transparent 42%), var(--page);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+.profile-card {
+  width: min(100%, 720px);
+  padding: clamp(24px, 5vw, 48px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 18px 55px rgba(33, 40, 90, 0.10);
+}
+.profile-header { text-align: center; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.avatar {
+  display: grid; place-items: center;
+  width: 76px; height: 76px; margin: 0 auto 12px;
+  border-radius: 24px; background: linear-gradient(135deg, #5b5bd6, #8989f5);
+  color: white; font-size: 1.45rem; font-weight: 800; letter-spacing: 1px;
+}
+.eyebrow { margin: 0; color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .16em; }
+h1 { margin: 4px 0; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.2; letter-spacing: -.04em; }
+.role { margin: 8px 0 0; color: var(--muted); }
+section { padding-top: 24px; }
+h2 { margin: 0 0 10px; font-size: 1.2rem; }
+section p { margin: 8px 0; color: #454b5f; }
+.skills-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 14px 0 0; padding: 0; }
+.skills-list li { padding: 7px 12px; border: 1px solid #ddddff; border-radius: 999px; background: var(--accent-light); color: #4545a8; font-size: .92rem; }
+.contact-link { color: var(--accent); font-weight: 700; overflow-wrap: anywhere; }
+.contact-link:hover { color: #3838a8; }
+.small-note { color: var(--muted) !important; font-size: .85rem; }
+footer { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; text-align: center; }
+@media (max-width: 480px) {
+  body { padding: 16px 10px; }
+  .profile-card { border-radius: 18px; }
+  .skills-list { gap: 8px; }
+  .skills-list li { font-size: .86rem; }
+}
